@@ -1,6 +1,5 @@
 
 import os
-
 import sys
 
 def leer_archivo(archivo):
@@ -31,3 +30,39 @@ while cont !=2:
             else:
                 print("\t Datos incorrectos\n")
                 cont +=1
+
+opcion = input("\nSeleccione una opcion: ")
+if opcion =='1':
+    print("Listar\n")
+    archivo_1 = open("nombre.txt")
+    archivo_2 = open("apellido.txt")
+    archivo_3 = open("dni.txt")
+
+    a = archivo_1.readlines()
+    b = archivo_2.readlines()
+    c = archivo_3.readlines()
+
+    d = zip(a,b,c)
+
+    for linea in d:
+        print(linea)
+
+elif opcion == "2":
+    archivo_1 = open("nombre.txt", "a")
+    archivo_2 = open("apellido.txt", "a")
+    archivo_3 = open("dni.txt", "a")
+
+    nombre = input("Ingrese el nombre: ")
+    apellido = input("Ingrese el apellido: ")
+    dni = input("Ingrese el dni: ")
+
+    archivo_1.write("\n"+nombre)
+    archivo_2.write("\n"+apellido)
+    archivo_3.write("\n"+dni)
+
+    archivo_1.close()
+    archivo_2.close()
+    archivo_3.close()
+else:
+        exit()
+

@@ -8,3 +8,5 @@ Ascencio
 Gastulo
 Viviano
 Valencia
+lucuma
+Medina
